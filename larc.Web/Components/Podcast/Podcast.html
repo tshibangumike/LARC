@@ -1,0 +1,30 @@
+﻿<section id="teachings">
+    <div class="container wow fadeInUp pt-5">
+        <div class="section-header">
+            <h3 class="section-title text-white">Podcast</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 p-3">
+                <div class="jumbotron">
+                    <h1 class="section-title">{{ podcast['Title'] }}</h1>
+                    <p class="lead">{{ podcast['PreacherTitle'] }} {{ podcast['PreacherName'] }}</p>
+                    <p class="lead">{{ podcast['Description'] }}</p>
+                    <hr class="my-4">
+                    <p>
+                        <iframe frameborder="0" class="col-md" src="{{ Url }}"></iframe>
+                    </p>
+                    <p>
+                        {{ podcast['Date'] | jsonDate : 'dd MMMM yyyy' }}
+                    </p>
+                    <p>
+                        
+                        <button type="button" class="btn btn-link" ng-click="BackToPodcasts()">
+                            All podcasts
+                        </button>
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>
+

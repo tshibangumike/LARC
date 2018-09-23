@@ -1,0 +1,32 @@
+﻿<section id="events">
+    <div class="container wow fadeInUp pt-5">
+        <div class="section-header">
+            <h3 class="section-title text-white">Events</h3>
+            <p class="section-description"></p>
+        </div>
+        <div ng-repeat="event in events"
+             ng-class="{'border-top border-white': $index != 0}"
+             class="row p-2 ">
+            <div class="col-md-2">
+                <img src="../../Images/events.svg" class="rounded mx-auto d-block" alt="..." />
+            </div>
+            <div class="col-md-8">
+                <div class="card border-0 bg-transparent">
+                    <div class="card-body text-white">
+                        <h4 class="card-title">{{ event['Title'] }}</h4>
+                        <p class="font-weight-bold">
+                            {{ event['StartTime'] | jsonDate : "fullDate"}}<br />
+                            {{ event['StartTime'] | jsonDate : "HH:mm" }} - {{ event['EndTime'] | jsonDate : "HH:mm" }}
+                        </p>
+                        <p class="card-text font-weight-bold">
+                            {{ event['Location'] }}
+                        </p>
+                        <p class="card-text font-weight-bold">{{ event['Description'] }}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,43 @@
+﻿<section id="gallery">
+    <div class="container wow fadeInUp pt-5">
+        <div class="section-header">
+            <h3 class="section-title text-white">Gallery</h3>
+            <p class="section-description"></p>
+        </div>
+        <div id="images" class="row">
+            <div ng-repeat="month in GetMonthsFromPictures()"
+                 ng-show="GetMonthsFromPictures().length > 0"
+                 class="row">
+                <div class="col-md-2 p-1">
+                    <button class="btn btn-light btn-lg btn-block btn-disabled">
+                        {{ month }}
+                    </button>
+                </div>
+                <div class="col-md-10 p-1">
+                    <div class="row">
+                        <div ng-repeat="picture in GetPicturesByMonth(month)"
+                             class="col-md-3">
+                            <div class="thumbnail">
+                                <img id="{{ picture['GoogleDriveLink'] }}"
+                                     class="img img-fluid img-thumbnail rounded float-left"
+                                     style="height: 200px; width: 100%; display: block;"
+                                     ng-src="{{ GetPictureUrl(picture) }}"
+                                     alt="Card image cap"
+                                     ng-click="ShowImage(picture['GoogleDriveLink'])">
+                                {{ GetDateFromPicture(picture) }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
